@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended: true}));
 //configuracion de la carpeta publica
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-// recibe el formulario, valida y guarda en el CSV
+// recibe el formulario, valida y guarda en el CSV y en MySQL
 app.post("/registrar", async (req, res) => {
   try {
     const { area, hallazgo, riesgo, responsable, correo } = req.body;
