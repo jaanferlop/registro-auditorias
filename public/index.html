@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Auditorías</title>
+  <!-- hoja de estilos propia: diseño ordenado y responsivo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- etiquetas semánticas: main contiene el contenido principal de la página -->
+  <main class="contenedor-formulario">
+    <h1>Registro de Auditorías</h1>
+    <!-- cada campo tiene un name: es la llave con la que el servidor recibe el dato (req.body.area, etc.) -->
+    <form id="formAuditoria">
+      <!-- label for = id del campo: al hacer clic en el texto se activa el campo -->
+      <label for="area">Área auditada</label>
+      <input type="text" id="area" name="area" required>
+
+      <!-- required: no puede ir vacío; minlength: mínimo 10 caracteres -->
+      <label for="hallazgo">Hallazgo</label>
+      <textarea id="hallazgo" name="hallazgo" minlength="10" required></textarea>
+
+      <!-- select: solo permite elegir bajo, medio o alto; la opción vacía obliga a elegir -->
+      <label for="riesgo">Nivel de riesgo</label>
+      <select id="riesgo" name="riesgo" required>
+        <option value="">Seleccione...</option>
+        <option value="bajo">Bajo</option>
+        <option value="medio">Medio</option>
+        <option value="alto">Alto</option>
+      </select>
+
+      <label for="responsable">Responsable del proceso</label>
+      <input type="text" id="responsable" name="responsable" required>
+
+      <!-- type="email": el navegador valida el formato del correo -->
+      <label for="correo">Correo del responsable</label>
+      <input type="email" id="correo" name="correo" required>
+
+      <button type="submit">Registrar auditoría</button>
+    </form>
+    <!-- aquí app.js mostrará si el registro se guardó o hubo un error -->
+    <p id="mensaje"></p>
+  </main>
+  <!-- script al final: el formulario ya existe cuando app.js lo busca -->
+  <script src="app.js"></script>
+</body>
+</html>

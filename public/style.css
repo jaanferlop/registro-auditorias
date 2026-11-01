@@ -1,0 +1,103 @@
+/* variables: la paleta se define una sola vez y se reutiliza */
+:root {
+  --color-fondo: #f1f5f9;
+  --color-tarjeta: #ffffff;
+  --color-primario: #1e3a8a;
+  --color-texto: #1f2937;
+  --color-borde: #cbd5e1;
+}
+
+/* el padding no agranda los campos: nada se sale de la tarjeta */
+* {
+  box-sizing: border-box;
+}
+
+/* centra la tarjeta en la pantalla */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* tarjeta responsiva: 100% en celular, máximo 480px en pantallas grandes */
+.contenedor-formulario {
+  background: var(--color-tarjeta);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+}
+
+h1 {
+  color: var(--color-primario);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+/* cada etiqueta en su propia línea, encima de su campo */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* los tres tipos de campo comparten el mismo estilo */
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  font: inherit;
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* resalta el campo que se está llenando */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: 2px solid var(--color-primario);
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* aquí app.js mostrará si el registro se guardó o hubo error */
+#mensaje {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* mobile-first: desde 768px se da más espacio interno */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
+
+  .contenedor-formulario {
+    padding: 2rem;
+  }
+}
