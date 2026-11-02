@@ -107,6 +107,10 @@ mysql -u root -p -e "SELECT * FROM registro_auditorias.auditorias;"
 
 ## Evidencias de prueba
 
+**Consola:** servidor iniciado con `npm start`.
+
+![Consola con el servidor escuchando en el puerto 3000](docs/capturas/consola-servidor.png)
+
 **Formulario:** registro guardado correctamente.
 
 ![Formulario con el mensaje de registro exitoso](docs/capturas/formulario-registro-exitoso.png)
